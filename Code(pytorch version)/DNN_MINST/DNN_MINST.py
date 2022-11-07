@@ -76,9 +76,8 @@ class Net(nn.Module):
 
 net = Net()
 train_loss = []
-# [w1,b1,w2,b2,w3,b3]
 optimizer = optim.SGD(net.parameters(),lr=0.01,momentum=0.09)
-for epoch in range(3):
+for epoch in range(10):
     for batch_idx,(x,y) in enumerate(train_loader):
         x = x.view(x.size(0), 28*28)
         out = net(x)
@@ -93,8 +92,11 @@ for epoch in range(3):
         if batch_idx % 10 == 0:
             print(epoch, batch_idx , loss.item())
 
-# we get optimal [w1,b1,w2,b2,w3,b3]
 Visualization(train_loss)
+
+#net = Net()
+#net.load_state_dict(torch.load('DNN.pt'))
+
 total_correct = 0
 for x,y in test_loader:
     x = x.view(x.size(0),28*28)
@@ -111,3 +113,4 @@ x,y = next(iter(train_loader))
 out = net(x.view(x.size(0),28*28))
 pred = out.argmax(dim=1)
 plot_image(x,pred,'test')
+torch.save(net.state_dict(),'DNN.pt')
