@@ -114,3 +114,5 @@ out = net(x.view(x.size(0),28*28))
 pred = out.argmax(dim=1)
 plot_image(x,pred,'test')
 torch.save(net.state_dict(),'DNN.pt')
+
+# Final Correct Rate ： 0.927
