@@ -86,3 +86,5 @@ def main():
     plt_image(x,pred,y)
 if __name__ =='__main__':
     main()
+    
+# Final Accuracy ：0.5596    
