@@ -55,3 +55,5 @@ with torch.no_grad():
     avg_acc.append(acc)
     #torch.save(rnn.state_dict(),'RNN.pt')
     print(acc)
+
+# Final Correct Rate = 0.87796
