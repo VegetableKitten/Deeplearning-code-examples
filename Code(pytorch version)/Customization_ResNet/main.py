@@ -62,3 +62,5 @@ for i3,(xxx,yyy) in enumerate(text_data):
 
 acc = sum_acc/num_acc
 print(acc)
+
+# Final acc = 0.89
