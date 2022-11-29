@@ -5,7 +5,6 @@ import torchvision.transforms as transforms
 
 class_nums=10
 
-'''创建公共卷积层'''
 
 def conv(in_channels,out_channels,kernel_size,stride=1,padding=0):
     
@@ -16,7 +15,6 @@ def conv(in_channels,out_channels,kernel_size,stride=1,padding=0):
         nn.ReLU(inplace=True)
     )
 
-'''创建Inception层'''
 class Inception(nn.Module):
     
     def __init__(self,in_channels,ch1,ch3reduce,ch3,ch5reduce,ch5,pool_proj):
@@ -51,7 +49,6 @@ class Inception(nn.Module):
         
         return torch.cat(block,dim=1)
 
-'''创建GoogleNet'''
 
 class GoogleNet(nn.Module):
     
