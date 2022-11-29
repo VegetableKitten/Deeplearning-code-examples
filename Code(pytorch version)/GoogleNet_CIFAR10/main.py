@@ -84,7 +84,7 @@ def train():
                         torch.save(model.state_dict(),'GoogleNet.pt')
                     print(acc)
 
-'''调用train'''
+
 if __name__ == '__main__':
     
     train()
